@@ -20,10 +20,13 @@
 
 .header {
   background-color: #393f4d;
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: auto;
   grid-auto-flow: column;
+}
+
+.header, .footer {
+  grid-column: 1 / -1;
 }
 
 .logo {
@@ -48,7 +51,7 @@
   background-color: #C50208;
   grid-row: 2 / span 2;
   display: grid;
-  gap: 40px;
+  gap: 50px;
   align-items:stretch;
 }
 
@@ -68,9 +71,13 @@
   font-weight: normal;
 }
 
+.sidebar > div {
+  display: grid;
+  place-content: center;
+}
+
 .nav {
   background-color: #C50208;
-  grid-column: 2 / -1;
 }
 
 .nav ul {
@@ -85,9 +92,8 @@
 
 .article {
   background-color: #bccbde;
-  grid-column: 2 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
 
@@ -102,6 +108,7 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
@@ -117,7 +124,6 @@
 
 .footer {
   background-color: #393f4d;
-  grid-column: 1 / -1;
 }
 
 .footer p {
