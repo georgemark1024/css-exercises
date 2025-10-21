@@ -22,20 +22,34 @@
   background-color: #393f4d;
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+}
+
+.logo {
+  justify-self: start;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
+  grid-auto-flow: column;
+  column-gap: calc(10px + 10%);
+  justify-content: space-between;
 }
 
 .menu ul,
 .menu li {
   font-size: 16px;
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .sidebar {
   background-color: #C50208;
-  grid-row: 2 / span 2; /* why does it cause misbehavior with 2 / -2 */
+  grid-row: 2 / span 2;
+  display: grid;
+  gap: 40px;
+  align-items:stretch;
 }
 
 .sidebar .photo {
@@ -59,15 +73,22 @@
   grid-column: 2 / -1;
 }
 
+.nav ul {
+  display: grid;
+  grid-auto-flow: column;
+}
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  list-style-type: none;
 }
 
 .article {
   background-color: #bccbde;
   grid-column: 2 / -1;
-  /* grid-row: 3 / -2; why does this cause misbehaviour */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
 }
 
 .article p {
